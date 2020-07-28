@@ -1,0 +1,66 @@
+<app-videoBackground> </app-videoBackground>
+
+<mat-card class="root">
+  <mat-card-header>
+    <img src="assets/trapx-logo.png" alt="logo" width="150px" height="100%" />
+    <h1>Sign in</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      [ngStyle.xs]="{ width: '100%' }"
+      (submit)="onSignIn(signInForm)"
+      #signInForm="ngForm"
+    >
+      <mat-form-field appearance="fill">
+        <mat-label>
+          User Name
+        </mat-label>
+        <input
+          ngModel
+          name="userName"
+          matInput
+          type="text"
+          placeholder="Please enter your user name"
+          required
+          minlength="2"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input
+          ngModel
+          name="password"
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          required
+          minlength="8"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-checkbox
+        [checked]="rememberMe"
+        (change)="rememberMe = $event.checked"
+        >Remember me</mat-checkbox
+      >
+
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="signInForm.invalid"
+      >
+        LOG IN
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
