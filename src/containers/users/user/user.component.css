@@ -1,0 +1,15 @@
+mat-expansion-panel-header {
+  text-transform: capitalize;
+  font-size: 2rem;
+
+  letter-spacing: 0.1rem;
+}
+
+.card-info-text {
+  width: 100%;
+  display: flex;
+}
+
+.card-info-text p {
+  font-weight: 300;
+}

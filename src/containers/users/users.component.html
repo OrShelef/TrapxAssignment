@@ -1,3 +1,20 @@
-<p>
-  users works!
-</p>
+<div
+  class="root"
+  fxLayout="column"
+  fxLayoutAlign="start start"
+  fxLayoutGap="0px"
+>
+  <h1>Users</h1>
+  <mat-accordion *ngFor="let user of users">
+    <app-user [user]="user"></app-user>
+  </mat-accordion>
+  <span class="space"></span>
+  <button
+    (click)="onAddUserDialog()"
+    class="mat-elevation-z6"
+    fxFlexAlign="end"
+    mat-fab
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

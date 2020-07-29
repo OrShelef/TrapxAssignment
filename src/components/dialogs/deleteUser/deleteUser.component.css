@@ -1,0 +1,15 @@
+p {
+  font-size: 2rem;
+}
+
+mat-icon {
+  transform: translateY(5px);
+}
+
+mat-icon,
+h1 {
+  color: red;
+}
+.mat-dialog-actions {
+  flex-direction: row-reverse;
+}

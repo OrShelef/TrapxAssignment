@@ -1,0 +1,28 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    {{ user.loginName }}
+  </mat-expansion-panel-header>
+  <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="50px">
+    <img src="{{ user.image }}" />
+    <div
+      style="width: 100%;"
+      fxLayout="column"
+      fxLayoutAlign="start start"
+      fxLayoutGap="10px"
+    >
+      <h2 class="card-info-text" fxLayoutGap="10px">
+        <strong>User name:</strong>
+        <p>{{ user.userName }}</p>
+      </h2>
+      <h2 class="card-info-text" fxLayoutGap="10px">
+        <strong>Role:</strong>
+        <p>{{ user.role }}</p>
+      </h2>
+    </div>
+  </div>
+  <mat-action-row>
+    <button (click)="onDelete(user)" color="warn" mat-raised-button>
+      Delete
+    </button>
+  </mat-action-row>
+</mat-expansion-panel>

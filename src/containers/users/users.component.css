@@ -1,0 +1,32 @@
+.root {
+  background: var(--accent);
+  min-height: 100vh;
+}
+
+.root * {
+  color: var(--primary);
+}
+
+.root > h1 {
+  font-size: 5rem;
+  padding: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+.root button {
+  background-color: var(--primary);
+  position: fixed;
+  top: 85vh;
+  right: 5rem;
+  z-index: 4;
+}
+
+.root mat-icon {
+  color: var(--accent);
+}
+mat-accordion {
+  height: 100%;
+  width: 90%;
+  margin: 0.4rem auto;
+}

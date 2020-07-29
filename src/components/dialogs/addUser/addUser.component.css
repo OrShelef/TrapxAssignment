@@ -1,0 +1,27 @@
+p {
+  font-size: 2rem;
+}
+
+mat-icon {
+  transform: translateY(5px);
+}
+
+mat-icon,
+h1 {
+  color: var(--primary);
+}
+.mat-dialog-actions {
+  flex-direction: row-reverse;
+}
+
+mat-form-field {
+  font-size: 2rem;
+}
+
+mat-label {
+  font-size: 1.4rem;
+}
+
+mat-option {
+  font-size: 2rem !important;
+}

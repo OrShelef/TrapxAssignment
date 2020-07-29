@@ -1,0 +1,73 @@
+<h1 mat-dialog-title><mat-icon>account_box</mat-icon> Add User</h1>
+<div style="height: 100%;" mat-dialog-content>
+  <form
+    fxLayout="column"
+    (submit)="onAddUser(addUserForm)"
+    #addUserForm="ngForm"
+    fxLayoutGap="10px"
+  >
+    <mat-form-field>
+      <mat-label>User name</mat-label>
+      <input
+        #userName
+        matInput
+        placeholder="User name"
+        name="userName"
+        type="text"
+        ngModel
+        required
+        minlength="2"
+      />
+      <mat-hint>Minimum 2 characters</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Login name</mat-label>
+      <input
+        #loginName
+        matInput
+        placeholder="Login name"
+        name="loginName"
+        type="text"
+        ngModel
+        required
+        minlength="2"
+      />
+      <mat-hint>Minimum 2 characters</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        #password
+        matInput
+        placeholder="Password"
+        name="password"
+        type="password"
+        ngModel
+        required
+        minlength="8"
+      />
+      <mat-hint>Minimum 8 characters</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Role</mat-label>
+      <mat-select name="role" ngModel required>
+        <mat-option *ngFor="let role of roles" [value]="role">{{
+          role
+        }}</mat-option>
+      </mat-select>
+      <mat-label><mat-icon>security</mat-icon></mat-label>
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button
+        [disabled]="addUserForm.invalid"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        cdkFocusInitial
+      >
+        Add user
+      </button>
+      <button mat-button [mat-dialog-close]="false">Cancel</button>
+    </div>
+  </form>
+</div>

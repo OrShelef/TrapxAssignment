@@ -1,9 +1,20 @@
 <app-videoBackground> </app-videoBackground>
 
-<mat-card class="root">
+<mat-card
+  class="root"
+  [ngStyle.xs]="{
+    background: 'linear-gradient(to bottom, #fff 30%, rgba(255, 255, 255, 0.6))'
+  }"
+>
   <mat-card-header>
-    <img src="assets/trapx-logo.png" alt="logo" width="150px" height="100%" />
-    <h1>Sign in</h1>
+    <img
+      [ngStyle.xs]="{ width: '100%' }"
+      src="assets/trapx-logo.png"
+      alt="logo"
+      width="150px"
+      height="100%"
+    />
+    <h1 fxHide.xs>Sign in</h1>
   </mat-card-header>
   <mat-card-content>
     <form

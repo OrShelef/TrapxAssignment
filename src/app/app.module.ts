@@ -10,13 +10,18 @@ import { UsersComponent } from "src/containers/users/users.component";
 import { VideoBackgroundComponent } from "src/components/videoBackground/videoBackground.component";
 import { FormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
-
+import { UserComponent } from "../containers/users/user/user.component";
+import { AddUserComponent } from "../components/dialogs/addUser/addUser.component";
+import { DeleteUserComponent } from "../components/dialogs/deleteUser/deleteUser.component";
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UsersComponent,
     VideoBackgroundComponent,
+    UserComponent,
+    AddUserComponent,
+    DeleteUserComponent,
   ],
   imports: [
     BrowserModule,
