@@ -40,7 +40,7 @@ export class ApiService {
   AddUser(user: User) {
     return new Promise((resolve, reject) => {
       this.http
-        .post(this.baseUrl + "signUp", user)
+        .post(this.baseUrl + "signUp", user, { headers: this.getHeaders() })
         .subscribe((res: ApiResponse) => {
           if (res.status == ResponseStatus.Success) {
             this.users.push(res.data);

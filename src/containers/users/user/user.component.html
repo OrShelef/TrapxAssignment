@@ -21,7 +21,12 @@
     </div>
   </div>
   <mat-action-row>
-    <button (click)="onDelete(user)" color="warn" mat-raised-button>
+    <button
+      [disabled]="!isAdmin"
+      (click)="onDelete(user)"
+      color="warn"
+      mat-raised-button
+    >
       Delete
     </button>
   </mat-action-row>

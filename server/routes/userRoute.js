@@ -13,7 +13,12 @@ router
     permission(["Administrator"]),
     catchFunc(controller.addUser)
   )
-  .delete("/:id", protectedRoute, catchFunc(controller.delete))
+  .delete(
+    "/:id",
+    protectedRoute,
+    permission(["Administrator"]),
+    catchFunc(controller.delete)
+  )
   .get(
     "/",
     protectedRoute,

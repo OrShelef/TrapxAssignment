@@ -5,6 +5,7 @@ import { AddUserComponent } from "src/components/dialogs/addUser/addUser.compone
 import { ApiService } from "src/services/Api.service";
 import { ApiResponse, ResponseStatus } from "src/models/ApiResponse";
 import { Router } from "@angular/router";
+import { AppService } from "src/services/App.service";
 
 @Component({
   selector: "app-users",
@@ -15,9 +16,10 @@ export class UsersComponent implements AfterViewInit {
   constructor(
     public dialog: MatDialog,
     private server: ApiService,
-    private router: Router
+    private app: AppService
   ) {}
   users: User[] = [];
+  isAdmin = this.app.currentUser.role == Role.Administrator;
   async ngAfterViewInit() {
     try {
       this.users = await this.server.GetAllUsers();
