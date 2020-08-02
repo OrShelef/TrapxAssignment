@@ -4,6 +4,7 @@ export interface User {
   image: string;
   loginName: string;
   role: Role;
+  _id: string;
 }
 
 export enum Role {

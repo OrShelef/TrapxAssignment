@@ -1,0 +1,15 @@
+<div
+  class="root"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="30px"
+>
+  <h1>Welcome {{ app.currentUser.userName }}</h1>
+
+  <mat-card *ngIf="!app.isGuest()" (click)="onUsersClick()">
+    <mat-card-content>
+      <mat-icon matIcon>face</mat-icon>
+      Users
+    </mat-card-content>
+  </mat-card>
+</div>

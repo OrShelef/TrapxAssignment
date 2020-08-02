@@ -1,13 +1,20 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-
+import { ApiService } from "../../services/Api.service";
+import { ApiResponse, ResponseStatus } from "../../models/ApiResponse";
+import { Router } from "@angular/router";
+import { AppService } from "src/services/App.service";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
 export class LoginComponent implements OnInit, AfterViewInit {
-  constructor() {}
+  constructor(
+    private server: ApiService,
+    private router: Router,
+    private app: AppService
+  ) {}
   hide = true;
   rememberMe = false;
   @ViewChild("signInForm", { static: true }) form: NgForm;
@@ -32,5 +39,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
     } else {
       localStorage.removeItem("savedUser");
     }
+    const { loginName, password } = form.value;
+    this.server.SignIn(loginName, password).subscribe((res: ApiResponse) => {
+      if (res.status == ResponseStatus.Success) {
+        localStorage.setItem("token", res.token);
+
+        this.app.setUser(res.data);
+        this.router.navigateByUrl("/home");
+      }
+    });
   }
 }

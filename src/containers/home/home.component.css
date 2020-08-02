@@ -1,0 +1,40 @@
+.root {
+  background-color: var(--accent);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.root h1 {
+  color: var(--primary);
+  font-size: 3rem;
+}
+
+mat-card {
+  background-color: var(--primary);
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+mat-card:hover {
+  transform: translateY(-7px);
+}
+
+mat-card:active {
+  transform: translateY(-2px);
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  place-content: center center;
+  text-align: center;
+  font-size: 4rem;
+}
+
+mat-card-content mat-icon {
+  width: 5rem;
+  height: 5rem;
+  font-size: 5rem;
+  margin: 0 auto;
+}

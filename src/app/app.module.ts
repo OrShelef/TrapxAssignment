@@ -13,6 +13,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { UserComponent } from "../containers/users/user/user.component";
 import { AddUserComponent } from "../components/dialogs/addUser/addUser.component";
 import { DeleteUserComponent } from "../components/dialogs/deleteUser/deleteUser.component";
+import { HttpClientModule } from "@angular/common/http";
+import { HomeComponent } from "../containers/home/home.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import { DeleteUserComponent } from "../components/dialogs/deleteUser/deleteUser
     UserComponent,
     AddUserComponent,
     DeleteUserComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { DeleteUserComponent } from "../components/dialogs/deleteUser/deleteUser
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
